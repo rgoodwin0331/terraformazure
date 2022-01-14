@@ -3,40 +3,42 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "type": "String"
+            "value": "eastus2"
         },
         "extendedLocation": {
-            "type": "Object"
+            "value": {}
         },
         "virtualNetworkName": {
-            "type": "String"
+            "value": "SampleCo-Internal"
         },
         "resourceGroup": {
-            "type": "String"
+            "value": "SampleCoRG"
         },
         "addressSpaces": {
-            "type": "Array"
+            "value": [
+                "172.16.0.0/16"
+            ]
         },
         "ipv6Enabled": {
-            "type": "Bool"
+            "value": false
         },
         "subnetCount": {
-            "type": "Int"
+            "value": 1
         },
         "subnet0_name": {
-            "type": "String"
+            "value": "Servers"
         },
         "subnet0_addressRange": {
-            "type": "String"
+            "value": "172.16.1.0/24"
         },
         "ddosProtectionPlanEnabled": {
-            "type": "Bool"
+            "value": false
         },
         "firewallEnabled": {
-            "type": "Bool"
+            "value": false
         },
         "bastionEnabled": {
-            "type": "Bool"
+            "value": false
         }
     },
     "variables": {},
