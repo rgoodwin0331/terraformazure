@@ -2,7 +2,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "2.92"
+      version = "2.92.0"
     }
   }
 }
@@ -10,11 +10,17 @@ terraform {
 # Configure the Microsoft Azure Provider.
 provider "azurerm" {}
 
-resource "azurerm_resource_group_template_deployment" "SampleCoRG" {
-  name                = "SampleCoRG"
-  resource_group_name = SampleCoRG
-  deployment_mode = "Complete"
 
+resource "azurerm_resource_group" "samplecorg" {
+  name     = "SampleCoRG"
+  location = "eastus2"
+}
+
+
+resource "azurerm_resource_group_template_deployment" "arm" {
+  name                = "arm"
+  resource_group_name = azurerm_resource_group.rg.name
+  deployment_mode = "Complete"
   template_body = file("template.json")
 
   parameters =  {
