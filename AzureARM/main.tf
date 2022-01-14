@@ -11,7 +11,7 @@ terraform {
 provider "azurerm" {}
 
 
-resource "azurerm_resource_group" "samplecorg" {
+resource "azurerm_resource_group" "rg" {
   name     = "SampleCoRG"
   location = "eastus2"
 }
