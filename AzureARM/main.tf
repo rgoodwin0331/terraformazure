@@ -19,10 +19,10 @@ resource "azurerm_resource_group" "rg" {
 }
 
 
-resource "azurerm_resource_group_template_deployment" "arm" {
-  name                = "arm"
+resource "azurerm_resource_group_template_deployment" "SampleCoRG" {
+  name                = "SampleCoRG"
   resource_group_name = azurerm_resource_group.rg.name
-  deployment_mode = "Complete"
+  deployment_mode = "Incremental"
   template_content = file("template.json")
 
   }
