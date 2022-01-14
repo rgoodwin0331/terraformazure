@@ -14,6 +14,7 @@ provider "azuread" {
 resource "azurerm_resource_group_template_deployment" "terraform-arm" {
   name                = "terraform-arm-01"
   resource_group_name = azurerm_resource_group.terraform-arm.name
+  deployment_mode = "Incremental"
 
   template_body = file("template.json")
 
@@ -52,13 +53,11 @@ resource "azurerm_resource_group_template_deployment" "terraform-arm" {
         },
         "firewallEnabled" =  {
             "value" =  false
-        },
+        },  
         "bastionEnabled" =  {
             "value" =  false
         }
     }
-}
-
-  deployment_mode = "Incremental"
+  
 }
 
