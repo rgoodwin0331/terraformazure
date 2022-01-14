@@ -39,8 +39,7 @@
         },
         "bastionEnabled": {
             "value": false
-        }
-    },
+        },
     "variables": {},
     "resources": [
         {
@@ -69,4 +68,5 @@
             }
         }
     ]
+  }
 }
