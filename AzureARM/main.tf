@@ -21,6 +21,6 @@ resource "azurerm_resource_group_template_deployment" "arm" {
   name                = "arm"
   resource_group_name = azurerm_resource_group.rg.name
   deployment_mode = "Complete"
-  template_content    = file("AzureARM/template.json")
+  template_content    = file("template.json")
 
   }
