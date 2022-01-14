@@ -1,19 +1,18 @@
 terraform {
   required_providers {
-    azuread = {
-      source = "hashicorp/azuread"
-      version = "2.13.0"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "2.92"
     }
   }
 }
 
-provider "azuread" {
-  # Configuration options
-}
+# Configure the Microsoft Azure Provider.
+provider "azurerm" {}
 
-resource "azurerm_resource_group_template_deployment" "terraform-arm" {
-  name                = "terraform-arm-01"
-  resource_group_name = azurerm_resource_group.terraform-arm.name
+resource "azurerm_resource_group_template_deployment" "SampleCoRG" {
+  name                = "SampleCoRG"
+  resource_group_name = azurerm_resource_group.SampleCoRG.name
   deployment_mode = "Incremental"
 
   template_body = file("template.json")
@@ -60,4 +59,3 @@ resource "azurerm_resource_group_template_deployment" "terraform-arm" {
     }
   
 }
-
