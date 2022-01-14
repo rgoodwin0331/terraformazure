@@ -12,7 +12,7 @@ provider "azurerm" {}
 
 resource "azurerm_resource_group_template_deployment" "SampleCoRG" {
   name                = "SampleCoRG"
-  resource_group_name = azurerm_resource_group.SampleCoRG.name
+  resource_group_name = azurerm_resource_group.SampleCoRG.id
   deployment_mode = "Incremental"
 
   template_body = file("template.json")
